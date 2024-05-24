@@ -122,7 +122,6 @@ pub fn askOne(self: *WorkContext, ask: Ask) !void {
             });
             return;
         },
-        swh.case("zenlang"),
         swh.case("v"),
         swh.case("vlang"),
         => {
@@ -130,24 +129,6 @@ pub fn askOne(self: *WorkContext, ask: Ask) !void {
                 .channel_id = ask.channel_id,
                 .target_msg_id = .{ .reply = ask.source_msg_id },
                 .title = "bruh",
-            });
-            return;
-        },
-        swh.case("u0") => {
-            _ = try self.sendDiscordMessage(.{
-                .channel_id = ask.channel_id,
-                .target_msg_id = .{ .reply = ask.source_msg_id },
-                .title = "Zig's billion dollar mistake™",
-                .description = &.{"https://github.com/ziglang/zig/issues/1530#issuecomment-422113755"},
-            });
-            return;
-        },
-        swh.case("tater") => {
-            _ = try self.sendDiscordMessage(.{
-                .channel_id = ask.channel_id,
-                .target_msg_id = .{ .reply = ask.source_msg_id },
-                .title = "",
-                .image = "https://memegenerator.net/img/instances/41913604.jpg",
             });
             return;
         },
